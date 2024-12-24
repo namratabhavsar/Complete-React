@@ -16,9 +16,14 @@ const Home = () => {
     const newBlogs = blogs.filter((item) => item.id !=id);
     SetBlogs(newBlogs);
    }
+
+   const updateTitle = (id) =>{
+    const updatedBlogs = blogs.filter((item) =>  item.id ==id ? item.title = "Updated Title" : item.title);
+    SetBlogs(updatedBlogs);
+   }
     return ( 
         <div className="home">
-           <BlogList blogsprop={blogs} title= {"All Blogs !"} handleClick={handleClick}/>
+           <BlogList blogsprop={blogs} title= {"All Blogs !"} handleClick={handleClick} updateTitle={updateTitle}/>
 
         </div>
      );
