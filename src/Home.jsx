@@ -12,10 +12,14 @@ const Home = () => {
         {title:'Finance Blog', body:'Finance Description....',author:'Namrata',id:5 }
     ])
 
+   const handleClick = (id) =>{
+    const newBlogs = blogs.filter((item) => item.id !=id);
+    SetBlogs(newBlogs);
+   }
     return ( 
         <div className="home">
-           <BlogList blogsprop={blogs} title= {"All Blogs !"}/>
-           <BlogList blogsprop={blogs.filter((item) => item.author==='Namrata')} title= {"Namrata's Blogs !"}/>
+           <BlogList blogsprop={blogs} title= {"All Blogs !"} handleClick={handleClick}/>
+
         </div>
      );
 }
